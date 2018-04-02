@@ -1,0 +1,15 @@
+{
+  "name": "adapt-edgeanimate-mobile",
+  "version": "1.0.0",
+  "description": "A component that displays an image gallery with accompanying text",
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/BATraining/adapt-edgeanimate-mobile.git"
+  },
+  "author": "AdaptLearning",
+  "license": "GPL v3",
+  "bugs": {
+    "url": "https://github.com/BATraining/adapt-edgeanimate-mobile/issues"
+  }
+}

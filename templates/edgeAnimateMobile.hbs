@@ -1,0 +1,104 @@
+{{!--
+    adapt-edgeanimate-mobile
+    Copyright (C) 2015 Bombardier Inc. (www.batraining.com)
+    https://github.com/BATraining/adapt-edgeanimate-mobile/blob/master/LICENSE
+   
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+   
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+   
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+--}}
+<div class="edgeAnimateMobile-inner component-inner" role="region">
+    {{> component this}}
+    <div class="edgeAnimateMobile-widget component-widget {{#if _narrative._hasNavigationInTextArea}}edgeAnimateMobile-text-controls{{/if}}">
+
+        <div class="edgeAnimateMobile-content">
+            <div class="edgeAnimateMobile-content-inner">
+                {{#each _narrative._items}}
+                <div class="edgeAnimateMobile-content-item">
+                    <div class="edgeAnimateMobile-content-title">
+                        <div class="edgeAnimateMobile-content-title-inner accessible-text-block h5" role="heading" aria-level="5" tabindex="0">
+                            {{{title}}}
+                        </div>
+                    </div>
+                    {{#if body}}
+                    <div class="edgeAnimateMobile-content-body">
+                        <div class="edgeAnimateMobile-content-body-inner">
+                            {{{a11y_text body}}}
+                        </div>
+                    </div>
+                    {{/if}}
+                </div>
+                {{/each}}
+                <div class="edgeAnimateMobile-controls-container clearfix">
+                    <div class="edgeAnimateMobile-indicators">
+                        {{#each _narrative._items}}
+                        <div class="edgeAnimateMobile-progress component-item-color component-item-border"></div>
+                        {{/each}}
+                    </div>
+                    <a href="#" class="edgeAnimateMobile-controls edgeAnimateMobile-control-left" role="button">
+                        <div class="icon icon-controls-left"></div>
+                    </a>
+                    <a href="#" class="edgeAnimateMobile-controls edgeAnimateMobile-control-right" role="button">
+                        <div class="icon icon-controls-right"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="edgeAnimateMobile-strapline">
+            <div class="edgeAnimateMobile-strapline-header">
+                <div class="edgeAnimateMobile-strapline-header-inner clearfix">
+                    <div></div>
+                    {{#each _narrative._items}}
+                    <div class="edgeAnimateMobile-strapline-title">
+                        <div class="edgeAnimateMobile-strapline-title-inner accessible-text-block h5">
+                            {{{strapline}}}
+                        </div>
+                        {{#if body}}
+                        <a href="#" class="edgeAnimateMobile-popup-open" tabindex="0">
+                            <div class="icon icon-plus"></div>
+                        </a>
+                        {{/if}}
+                        <div class="focus-rect"></div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <div class="edgeAnimateMobile-slide-container">
+
+            <a href="#" class="edgeAnimateMobile-controls edgeAnimateMobile-control-left" role="button">
+                <div class="icon icon-controls-left"></div>
+            </a>
+            <a href="#" class="edgeAnimateMobile-controls edgeAnimateMobile-control-right" role="button">
+                <div class="icon icon-controls-right"></div>
+            </a>
+
+            <div class="edgeAnimateMobile-slider clearfix">
+                {{#each _narrative._items}}
+                <div class="edgeAnimateMobile-slider-graphic {{#if visited}}visited{{/if}}">
+                    <img src="{{_graphic.src}}" alt="{{_graphic.alt}}"/>
+                </div>
+                {{/each}}
+            </div>
+            <div class="edgeAnimateMobile-indicators">
+                {{#each _narrative._items}}
+                <div class="edgeAnimateMobile-progress component-item-color component-item-border"></div>
+                {{/each}}
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+    </div>
+</div>

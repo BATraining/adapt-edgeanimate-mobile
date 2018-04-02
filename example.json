@@ -1,0 +1,49 @@
+{
+  "_id": "c-05",
+  "_parentId": "b-05",
+  "_classes": "",
+  "_type":"component",
+  "_layout": "left",
+  "_component": "edgeAnimateMobile",
+  "title": "EdgeAnimateMobile",
+  "displayTitle": "EdgeAnimateMobile",
+  "body": "This is optional body text. Select the forward arrows to move through the narrative on a desktop, or swipe the images and select the plus icons to do so on mobile.",
+  "instruction": "",
+  "mobileInstruction": "This is optional instruction text that will be shown when viewed on mobile.",
+  "_narrative": {
+    "_hasNavigationInTextArea": false,
+    "_setCompletionOn": "allItems",
+    "_items": [
+      {
+        "title": "Narrative stage 1 title",
+        "body": "This is display text 1. If viewing on desktop or tablet, this text will appear to the right of the image. On mobile, you’ll need to select the plus icon to reveal this text.",
+        "_graphic": {
+          "src": "course/en/images/narrative.png",
+          "alt": "First graphic",
+          "title": "First graphic"
+        },
+        "strapline": "Here is the first..."
+      },
+      {
+        "title": "Narrative stage 2 title",
+        "body": "This is display text 2.",
+        "_graphic": {
+          "src": "course/en/images/narrative_1.png",
+          "alt": "Second graphic",
+          "title": "Second graphic"
+        },
+        "strapline": "Now comes the second..."
+      },
+      {
+        "title": "Narrative stage 3 title",
+        "body": "This is display text 3.",
+        "_graphic": {
+          "src": "course/en/images/narrative_2.png",
+          "alt": "Third graphic",
+          "title": "Third graphic"
+        },
+        "strapline": "Third here!"
+      }
+    ]
+  }
+}

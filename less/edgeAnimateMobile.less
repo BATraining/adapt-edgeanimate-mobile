@@ -1,0 +1,329 @@
+/*
+ * adapt-edgeanimate-mobile
+ * Copyright (C) 2015 Bombardier Inc. (www.batraining.com)
+ * https://github.com/BATraining/adapt-edgeanimate-mobile/blob/master/LICENSE
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+.edgeAnimateMobile-component {
+
+    &.desktop {
+        .edgeAnimateMobile-slide-container {
+            float: left;
+            .dir-rtl & {
+                float: right;
+            }
+            margin-right: 3%;
+            .dir-rtl & {
+                margin-right: inherit;
+                margin-left: 3%;
+            }
+            width: 60%;
+        }
+        .edgeAnimateMobile-slider-graphic {
+            margin-right: 0;
+            width:60%;
+        }
+        .edgeAnimateMobile-strapline {
+            display:none;
+        }
+
+        .edgeAnimateMobile-content-inner {
+            .edgeAnimateMobile-controls {
+                position:static;
+                display:none;
+                margin-top: 0px;
+                margin-bottom:10px;
+                width:auto;
+                height:auto;
+                padding:8px;
+                .icon {
+                    margin:0px;
+                }
+            }
+            .edgeAnimateMobile-indicators {
+                display:none;
+                position: relative;
+                top: -4px;
+            }
+            .edgeAnimateMobile-progress {
+                background-color:darken(@inverted-background-color, 10%);
+                &.selected {
+                    background-color: @item-text-color;
+                }
+            }
+        }
+
+        .edgeAnimateMobile-text-controls {
+            .edgeAnimateMobile-content-inner {
+                position:relative;
+
+                .edgeAnimateMobile-controls-container {
+                    position:absolute;
+                    width:100%;
+                    left:0px;
+                    top:10px;
+                    display: block;
+                }
+                .edgeAnimateMobile-controls {
+                    margin-bottom:0px;
+                    display:inline-block;
+                }
+                .edgeAnimateMobile-control-left {
+                    float:left;
+                }
+                .edgeAnimateMobile-control-right {
+                    float: right;
+                }
+                .edgeAnimateMobile-indicators {
+                    display:block;
+                    width:100%;
+                    position:absolute;
+                    margin-top:10px;
+                    top:0px;
+                    left:0px;
+                }
+                .edgeAnimateMobile-content-item {
+                    padding-top: 36px;
+                }
+            }
+            .edgeAnimateMobile-slide-container {
+                .edgeAnimateMobile-controls {
+                    display:none;
+                }
+                .edgeAnimateMobile-indicators {
+                    display:none;
+                }
+            }
+
+        }
+    }
+
+    .edgeAnimateMobile-content {
+        float: right;
+        .dir-rtl & {
+            float: left;
+        }
+        width: 36%;
+        background: @inverted-background-color;
+        color: @inverted-foreground-color;
+    }
+
+    .edgeAnimateMobile-content-inner {
+        padding:20px;
+    }
+
+    &.mobile {
+        .edgeAnimateMobile-content {
+            display:none;
+        }
+    }
+
+    .edgeAnimateMobile-slide-container {
+        width: 100%;
+        position: relative;
+        overflow-x: hidden;
+        float: left;
+        .dir-rtl & {
+            float: right;
+        }
+    }
+
+    .edgeAnimateMobile-slider-graphic {
+        float: left;
+        .dir-rtl & {
+            float: right;
+        }
+        position: relative;
+    }
+
+    .edgeAnimateMobile-item-title {
+        position:relative;
+        display:block;
+    }
+
+    .edgeAnimateMobile-indicators {
+        text-align: center;
+    }
+
+    .edgeAnimateMobile-progress {
+        width: (@icon-size/3);
+        height: (@icon-size/3);
+        display: inline-block;
+        background-color: @item-color;
+        border:1px solid @foreground-color;
+        & when (@item-border-width = 1px) {
+            border: @item-border;
+        }
+        border-radius: 50%;
+        margin: 1px;
+        &.selected {
+            background-color: @item-text-color;
+        }
+    }
+
+    .edgeAnimateMobile-controls {
+        display: block;
+        width: (@icon-size*2);
+        height: (@icon-size*2);
+        position: absolute;
+        top: 50%;
+        margin-top: -(@icon-size*2);
+        z-index: 10;
+        text-decoration: none;
+        background-color:@button-color;
+        &:hover {
+            background-color:@button-hover-color;
+            .icon {
+                color:@button-text-hover-color;
+            }
+        }
+        .icon {
+            margin: (@icon-size/2);
+            color:@button-text-color;
+        }
+    }
+
+    .edgeAnimateMobile-control-left {
+        left: 0;
+        .dir-rtl & {
+            left: inherit;
+            right: 0;
+        }
+    }
+
+    .edgeAnimateMobile-control-right {
+        right: 0;
+        .dir-rtl & {
+            right: inherit;
+            left: 0;
+        }
+    }
+
+    .edgeAnimateMobile-strapline {
+        height: auto;
+        position: relative;
+    }
+
+    .edgeAnimateMobile-strapline-header {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .edgeAnimateMobile-strapline-header-inner {
+        position:relative;
+    }
+    .edgeAnimateMobile-strapline-title {
+        position: relative;
+        float: left;
+        text-decoration: none;
+        background-color: @button-color;
+        color: @button-text-color;
+        .dir-rtl & {
+            float: right;
+        }
+        .icon {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            .dir-rtl & {
+                right: inherit;
+                left: 0;
+            }
+            padding: 5px;
+            color: @button-text-color;
+
+            &:hover {
+                color: @button-text-hover-color;
+                cursor: pointer;
+            }
+        }
+        &:focus .focus-rect {
+            position: absolute;
+            right: extract(@focus-outline, 1);
+            bottom: extract(@focus-outline, 1);
+            top: extract(@focus-outline, 1);
+            left: extract(@focus-outline, 1);
+        }
+    }
+
+    .edgeAnimateMobile-strapline-title-inner {
+        height: (@item-padding-top + @item-padding-bottom + @icon-size);
+        line-height: (@item-padding-top + @item-padding-bottom + @icon-size);
+        padding-left: (@icon-size/2);
+        padding-right: (@item-padding-left + @item-padding-right + @icon-size);
+        .dir-rtl & {
+            padding-right: (@icon-size/2);
+            padding-left: (@item-padding-left + @item-padding-right + @icon-size);
+        }
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .edgeAnimateMobile-popup-open {
+        display: block;
+        position: absolute;
+        top:0;
+        right:0;
+        .dir-rtl & {
+            right:inherit;
+            left:0;
+        }
+        text-decoration: none;
+        z-index: 5;
+        background-color: @inverted-background-color;
+        padding: @item-padding;
+        .icon {
+            color: @inverted-foreground-color;
+            &:hover {
+                color: lighten(@inverted-background-color, 30%);
+            }
+        }
+    }
+
+    .edgeAnimateMobile-hidden {
+        display:none;
+    }
+
+}
+
+
+html.accessibility {
+
+    .edgeAnimateMobile-control-left:focus, .edgeAnimateMobile-control-left.focus {
+        left: extract(@focus-outline, 1);
+        .dir-rtl & {
+            left: inherit;
+            right: extract(@focus-outline, 1);
+        }
+    }
+
+    .edgeAnimateMobile-control-right:focus, .edgeAnimateMobile-control-right.focus {
+        right: extract(@focus-outline, 1);
+        .dir-rtl & {
+            right: inherit;
+            left: extract(@focus-outline, 1);
+        }
+    }
+
+
+    &.no-touch {
+        .edgeAnimateMobile-strapline-title:focus .focus-rect {
+            outline: @focus-outline;
+        }
+    }
+
+}
